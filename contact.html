@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Cam Russo, SEO & Content Consultant</title>
+<meta name="description" content="Request a consultation with Cam Russo, independent SEO & content consultant. Tell me about your site and goals — I'll reply within two business days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea;
+    --paper-deep:#ece7db;
+    --ink:#1c1b18;
+    --ink-soft:#46443d;
+    --green:#1d5c39;
+    --green-deep:#123a24;
+    --green-bright:#2c7d4f;
+    --line:#cfc8b8;
+    --error:#a02828;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--green);color:var(--paper);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* ---------- NAV (shared with homepage) ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,241,234,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{
+    font-family:'Fraunces',serif;
+    font-weight:600;font-size:22px;letter-spacing:-0.01em;
+    display:flex;align-items:baseline;gap:9px;
+  }
+  .brand .dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;}
+  .brand small{
+    font-family:'Archivo',sans-serif;font-weight:500;
+    font-size:11px;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    font-size:14px;font-weight:500;letter-spacing:0.01em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--green);}
+  .nav-links a.current{color:var(--ink);}
+  .nav-cta{
+    font-size:13px;font-weight:600;letter-spacing:0.04em;
+    text-transform:uppercase;
+    border:1.5px solid var(--ink);
+    padding:11px 20px;border-radius:2px;
+    color:var(--ink)!important;
+    transition:background .22s,color .22s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper)!important;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink);}
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-head{padding:84px 0 40px;}
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--green);margin-bottom:22px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:32px;height:1.5px;background:var(--green);}
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(40px,5.4vw,64px);
+    line-height:1.04;letter-spacing:-0.022em;
+    margin-bottom:24px;max-width:14ch;
+  }
+  h1 em{font-style:italic;color:var(--green);}
+  .lede{
+    font-family:'Spectral',serif;font-size:20px;line-height:1.55;
+    color:var(--ink-soft);max-width:36em;
+  }
+
+  /* ---------- FORM LAYOUT ---------- */
+  .body-grid{
+    display:grid;grid-template-columns:1.55fr 1fr;gap:64px;
+    padding-bottom:96px;align-items:start;
+  }
+  .form-block{
+    background:var(--paper-deep);
+    border:1.5px solid var(--ink);
+    padding:42px 44px 40px;
+    position:relative;
+  }
+  .form-block::before{
+    content:"";position:absolute;inset:7px;border:1px solid var(--line);pointer-events:none;
+  }
+  .form-block > *{position:relative;}
+
+  .field{margin-bottom:22px;}
+  .field label{
+    display:block;
+    font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:8px;
+  }
+  .field label .req{color:var(--green);margin-left:4px;}
+  .field input,.field select,.field textarea{
+    width:100%;
+    font-family:'Archivo',sans-serif;font-size:16px;line-height:1.5;
+    color:var(--ink);background:var(--paper);
+    border:1.5px solid var(--line);
+    padding:13px 14px;border-radius:2px;
+    transition:border-color .18s,background .18s;
+    -webkit-appearance:none;appearance:none;
+  }
+  .field textarea{min-height:140px;resize:vertical;font-family:'Archivo',sans-serif;}
+  .field select{
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3e%3cpath fill='none' stroke='%231d5c39' stroke-width='2' d='M1 1l5 5 5-5'/%3e%3c/svg%3e");
+    background-repeat:no-repeat;background-position:right 14px center;
+    padding-right:38px;cursor:pointer;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--green);background:#fff;
+  }
+  .field input:invalid:not(:placeholder-shown),
+  .field select:invalid:not([data-touched="false"]){border-color:var(--line);} /* don't go red until user has tried submitting */
+  form.attempted .field input:invalid,
+  form.attempted .field select:invalid,
+  form.attempted .field textarea:invalid{border-color:var(--error);}
+
+  /* honeypot — hidden from real users */
+  .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;}
+
+  .btn-submit{
+    background:var(--green);color:var(--paper);
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.03em;
+    padding:16px 30px;border-radius:2px;border:1.5px solid var(--green);
+    cursor:pointer;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:background .22s,transform .22s,border-color .22s;
+  }
+  .btn-submit:hover:not(:disabled){background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px);}
+  .btn-submit:disabled{opacity:0.6;cursor:wait;}
+  .btn-submit .arr{transition:transform .22s;}
+  .btn-submit:hover:not(:disabled) .arr{transform:translateX(4px);}
+
+  .reassure{
+    margin-top:18px;font-family:'Spectral',serif;font-style:italic;
+    font-size:15px;color:var(--ink-soft);
+  }
+
+  /* messages */
+  .msg{
+    border-radius:2px;padding:14px 16px;margin-bottom:22px;
+    font-size:15px;line-height:1.5;
+  }
+  .msg.error{
+    background:rgba(160,40,40,0.08);
+    border:1.5px solid var(--error);
+    color:var(--error);
+  }
+  .success-card{
+    border:1.5px solid var(--green);
+    background:#fff;
+    padding:36px 36px 32px;
+    border-radius:2px;
+  }
+  .success-card h3{
+    font-family:'Fraunces',serif;font-weight:600;font-size:26px;letter-spacing:-0.015em;
+    color:var(--green-deep);margin-bottom:12px;
+  }
+  .success-card p{font-size:16px;color:var(--ink-soft);}
+  .success-card p a{border-bottom:1.5px solid var(--green);}
+
+  /* ---------- SIDEBAR ---------- */
+  .side{padding-top:6px;}
+  .side h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:26px;letter-spacing:-0.015em;line-height:1.15;
+    margin-bottom:20px;
+  }
+  .side .direct{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;margin-bottom:26px;
+  }
+  .direct-item{
+    display:flex;flex-direction:column;gap:2px;margin-bottom:14px;
+  }
+  .direct-item:last-child{margin-bottom:0;}
+  .direct-item .lbl{
+    font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .direct-item a{
+    font-family:'Spectral',serif;font-size:19px;color:var(--ink);
+    transition:color .2s;
+  }
+  .direct-item a:hover{color:var(--green);}
+  .side-note{
+    font-size:14px;color:var(--ink-soft);line-height:1.55;
+  }
+  .side-note a{border-bottom:1px solid var(--green);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--paper-deep);
+    border-top:1.5px solid var(--ink);
+    padding:54px 0 40px;
+  }
+  .foot-grid{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:40px;flex-wrap:wrap;margin-bottom:38px;
+  }
+  .foot-brand .brand{margin-bottom:12px;}
+  .foot-brand p{font-size:14px;color:var(--ink-soft);max-width:26em;}
+  .foot-brand a{border-bottom:1px solid var(--green);}
+  .foot-contact{text-align:right;}
+  .foot-contact .ci{font-family:'Spectral',serif;font-size:17px;margin-bottom:4px;}
+  .foot-contact a:hover{color:var(--green);}
+  .foot-nav{
+    display:flex;gap:24px;flex-wrap:wrap;
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .foot-nav a{
+    font-size:13px;font-weight:500;letter-spacing:0.03em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .foot-nav a:hover{color:var(--green);}
+  .foot-legal{margin-top:24px;font-size:12px;color:var(--ink-soft);opacity:0.7;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:940px){
+    .body-grid{grid-template-columns:1fr;gap:38px;}
+    .form-block{padding:32px 28px 30px;}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px;}
+    .nav-links{
+      display:none;position:absolute;top:74px;left:0;right:0;
+      flex-direction:column;background:var(--paper);
+      border-bottom:1.5px solid var(--ink);padding:20px 22px;gap:18px;align-items:flex-start;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .page-head{padding:48px 0 28px;}
+    .body-grid{padding-bottom:60px;}
+    .foot-contact{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="/" class="brand">
+        <span class="dot"></span>
+        Cam Russo
+        <small>SEO &amp; Content</small>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/results">Results</a>
+        <a href="/about.html">About</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/contact" class="nav-cta current">Request a Consultation</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h1>Request a <em>consultation.</em></h1>
+      <p class="lede">Tell me about your site and what you're trying to achieve. I'll get back to you to set up a conversation — no charge, no obligation. The more detail you share, the more useful that first conversation will be.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="body-grid">
+
+        <!-- FORM -->
+        <div>
+          <div id="errorMsg" class="msg error" style="display:none;" role="status"></div>
+
+          <form id="contactForm" class="form-block" novalidate>
+            <!--
+              WEB3FORMS SETUP — ONE STEP:
+              1) Go to https://web3forms.com and paste russocam17@gmail.com to receive your access key.
+              2) Replace YOUR_WEB3FORMS_ACCESS_KEY below with the key from your email.
+              That's it. Submissions will land in russocam17@gmail.com.
+            -->
+            <input type="hidden" name="access_key" value="62b1b43b-02b5-420c-a764-44345c7e384f">
+            <input type="hidden" name="subject" value="New consultation request — camrusso.com">
+            <input type="hidden" name="from_name" value="camrusso.com contact form">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+            <div class="field">
+              <label for="name">Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder=" ">
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
+            </div>
+
+            <div class="field">
+              <label for="website">Website URL <span class="req">*</span></label>
+              <input type="url" id="website" name="website" required autocomplete="url" placeholder="https://" inputmode="url">
+            </div>
+
+            <div class="field">
+              <label for="topic">What can I help with? <span class="req">*</span></label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select one…</option>
+                <option>SEO &amp; AI-Visibility Audit</option>
+                <option>Core SEO Retainer</option>
+                <option>GEO / AIO Retainer</option>
+                <option>Content</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell me about your site and goals <span class="req">*</span></label>
+              <textarea id="message" name="message" required placeholder=" "></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span id="submitLabel">Send Request</span> <span class="arr">→</span>
+            </button>
+            <p class="reassure">I read every message personally and reply within two business days.</p>
+          </form>
+
+          <div id="successCard" class="success-card" style="display:none;" role="status">
+            <h3>Thanks — message received.</h3>
+            <p>I'll be in touch within two business days. In the meantime, if it's urgent, email <a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a> directly.</p>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side">
+          <h2>Prefer to reach out directly?</h2>
+          <div class="direct">
+            <div class="direct-item">
+              <span class="lbl">Email</span>
+              <a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a>
+            </div>
+            <div class="direct-item">
+              <span class="lbl">Phone</span>
+              <a href="tel:+16304568962">(630) 456-8962</a>
+            </div>
+          </div>
+          <p class="side-note">Cam Russo is an independent SEO &amp; content consultant and the founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="dot"></span>
+          Cam Russo
+          <small>SEO &amp; Content</small>
+        </div>
+        <p>An independent SEO &amp; content consulting practice. Founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
+      </div>
+      <div class="foot-contact">
+        <div class="ci"><a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a></div>
+        <div class="ci"><a href="tel:+16304568962">(630) 456-8962</a></div>
+      </div>
+    </div>
+    <div class="foot-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/results">Results</a>
+      <a href="/about.html">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="foot-legal">© 2026 Cam Russo. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  var mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+  mt.addEventListener('click',function(){nl.classList.toggle('open');});
+  nl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nl.classList.remove('open');});
+  });
+
+  // form submission via Web3Forms
+  var form=document.getElementById('contactForm');
+  var btn=document.getElementById('submitBtn');
+  var label=document.getElementById('submitLabel');
+  var errBox=document.getElementById('errorMsg');
+  var success=document.getElementById('successCard');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    errBox.style.display='none';
+    form.classList.add('attempted');
+    if(!form.checkValidity()){
+      var first=form.querySelector(':invalid');
+      if(first) first.focus();
+      return;
+    }
+    btn.disabled=true; label.textContent='Sending…';
+    var data=new FormData(form);
+    try{
+      var res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        body:data
+      });
+      var json=await res.json();
+      if(res.ok && json.success){
+        form.style.display='none';
+        success.style.display='block';
+        success.scrollIntoView({behavior:'smooth',block:'center'});
+      }else{
+        throw new Error(json.message||'Submission failed');
+      }
+    }catch(err){
+      errBox.textContent='Something went wrong sending your message. Please try again, or email russocam17@gmail.com directly.';
+      errBox.style.display='block';
+      btn.disabled=false; label.textContent='Send Request';
+    }
+  });
+</script>
+
+</body>
+</html>

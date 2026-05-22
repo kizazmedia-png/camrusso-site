@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cam Russo — SEO & Content Consultant</title>
+<meta name="description" content="Independent SEO and content consulting. Grow organic search visibility, strengthen your technical foundation, and get cited by AI search — ChatGPT, Claude, Perplexity, and Google AI Overviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,9..144&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea;
+    --paper-deep:#ece7db;
+    --ink:#1c1b18;
+    --ink-soft:#46443d;
+    --green:#1d5c39;
+    --green-deep:#123a24;
+    --green-bright:#2c7d4f;
+    --line:#cfc8b8;
+    --rule:#1c1b18;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--green);color:var(--paper);}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,241,234,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:74px;
+  }
+  .brand{
+    font-family:'Fraunces',serif;
+    font-weight:600;font-size:22px;letter-spacing:-0.01em;
+    display:flex;align-items:baseline;gap:9px;
+  }
+  .brand .dot{
+    width:8px;height:8px;background:var(--green);border-radius:50%;
+    display:inline-block;
+  }
+  .brand small{
+    font-family:'Archivo',sans-serif;font-weight:500;
+    font-size:11px;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    font-size:14px;font-weight:500;letter-spacing:0.01em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--green);}
+  .nav-cta{
+    font-size:13px;font-weight:600;letter-spacing:0.04em;
+    text-transform:uppercase;
+    border:1.5px solid var(--ink);
+    padding:11px 20px;border-radius:2px;
+    color:var(--ink)!important;
+    transition:background .22s,color .22s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper)!important;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 72px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.55fr 1fr;gap:54px;align-items:end;
+  }
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--green);margin-bottom:26px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:32px;height:1.5px;background:var(--green);}
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(44px,6.2vw,80px);
+    line-height:1.04;
+    letter-spacing:-0.022em;
+    margin-bottom:28px;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--green);
+  }
+  .hero-sub{
+    font-family:'Spectral',serif;
+    font-size:20px;line-height:1.55;
+    color:var(--ink-soft);
+    max-width:30em;margin-bottom:38px;
+  }
+  .hero-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--green);color:var(--paper);
+    font-weight:600;font-size:15px;letter-spacing:0.03em;
+    padding:16px 30px;border-radius:2px;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:background .22s,transform .22s;
+    border:1.5px solid var(--green);
+  }
+  .btn-primary:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px);}
+  .btn-primary .arr{transition:transform .22s;}
+  .btn-primary:hover .arr{transform:translateX(4px);}
+  .link-arrow{
+    font-size:14px;font-weight:600;color:var(--ink);
+    border-bottom:1.5px solid var(--green);padding-bottom:3px;
+    transition:color .2s;
+  }
+  .link-arrow:hover{color:var(--green);}
+
+  /* hero side — index card */
+  .hero-card{
+    border:1.5px solid var(--ink);
+    background:var(--paper-deep);
+    padding:0;
+    position:relative;
+  }
+  .hero-card::before{
+    content:"";position:absolute;inset:7px;border:1px solid var(--line);pointer-events:none;
+  }
+  .hero-card .hc-top{
+    padding:22px 24px 18px;border-bottom:1.5px solid var(--ink);
+  }
+  .hero-card .hc-label{
+    font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .hero-card .hc-body{padding:24px;}
+  .hc-list{list-style:none;}
+  .hc-list li{
+    font-family:'Spectral',serif;
+    font-size:16px;
+    padding:11px 0;
+    border-bottom:1px dotted var(--line);
+    display:flex;align-items:baseline;gap:11px;
+  }
+  .hc-list li:last-child{border-bottom:none;}
+  .hc-list li span{
+    font-family:'Archivo',sans-serif;
+    color:var(--green);font-weight:700;font-size:12px;
+  }
+
+  /* ---------- HERO PHOTO ---------- */
+  .hero-photo-wrap{}
+  .hero-photo{
+    border:1.5px solid var(--ink);
+    background:var(--paper-deep);
+    padding:8px;
+    position:relative;
+  }
+  .hero-photo::before{
+    content:"";position:absolute;inset:7px;border:1px solid var(--line);
+    pointer-events:none;z-index:2;
+  }
+  .hero-photo img{
+    display:block;width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    object-position:50% 22%;
+  }
+  .hero-photo-cap{
+    font-family:'Spectral',serif;font-style:italic;
+    font-size:13px;color:var(--ink-soft);
+    margin-top:14px;text-align:center;
+    letter-spacing:0.01em;
+  }
+
+  /* ---------- HERO STATS STRIP ---------- */
+  .hero-stats{
+    background:var(--ink);color:var(--paper);
+    border-top:1.5px solid var(--ink);
+    padding:56px 0 54px;
+  }
+  .hero-stats .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  }
+  .hero-stats .stat{
+    padding:8px 26px;
+    border-right:1px solid rgba(244,241,234,0.18);
+  }
+  .hero-stats .stat:first-child{padding-left:0;}
+  .hero-stats .stat:last-child{padding-right:0;border-right:none;}
+  .hero-stats .stat .num{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(40px,4.8vw,58px);
+    line-height:1;letter-spacing:-0.025em;
+    color:var(--paper);
+    margin-bottom:12px;
+  }
+  .hero-stats .stat .num .pct{
+    color:var(--green-bright);font-size:0.6em;
+    vertical-align:super;font-weight:500;
+  }
+  .hero-stats .stat .lbl{
+    font-size:13px;line-height:1.45;
+    color:rgba(244,241,234,0.72);
+    font-weight:500;
+  }
+  .hero-stats-cap{
+    font-family:'Spectral',serif;font-style:italic;
+    font-size:14px;color:rgba(244,241,234,0.62);
+    margin-top:26px;text-align:center;
+  }
+  .hero-stats-cap a{
+    color:var(--paper);
+    border-bottom:1px solid var(--green-bright);
+    padding-bottom:1px;
+    transition:color .2s;
+  }
+  .hero-stats-cap a:hover{color:var(--green-bright);}
+
+  /* ---------- FEATURED IN ---------- */
+  .featured-in{
+    background:var(--paper);
+    padding:80px 0;
+  }
+  .featured-in .eyebrow{margin-bottom:38px;}
+  .featured-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .featured-card{
+    display:flex;flex-direction:column;
+    background:var(--paper);
+    border:1px solid var(--line);
+    transition:background .25s,border-color .25s;
+    overflow:hidden;
+  }
+  .featured-card:hover{background:var(--paper-deep);border-color:var(--ink);}
+  .featured-img{
+    width:100%;aspect-ratio:16/9;max-height:180px;overflow:hidden;
+    background:var(--paper-deep);
+  }
+  .featured-img img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:saturate(0.4) brightness(0.96);
+    transition:filter .3s;
+  }
+  .featured-card:hover .featured-img img{filter:saturate(1) brightness(1);}
+  .featured-meta{
+    padding:20px 22px 22px;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .featured-type{
+    font-family:'Spectral',serif;font-style:italic;
+    font-size:12px;color:var(--ink-soft);
+  }
+  .featured-pub{
+    font-family:'Archivo',sans-serif;
+    font-size:14px;font-weight:600;color:var(--ink);
+    letter-spacing:0.01em;
+  }
+  .featured-title{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:18px;line-height:1.3;color:var(--ink);
+    letter-spacing:-0.01em;
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .featured-title .arr{
+    color:var(--green);font-size:14px;font-weight:600;
+    transition:transform .22s;
+    display:inline-block;flex-shrink:0;
+  }
+  .featured-card:hover .featured-title .arr{transform:translate(3px,-3px);}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{padding:96px 0;}
+  .sec-head{
+    margin-bottom:14px;
+  }
+  .sec-num{
+    display:block;
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:14px;color:var(--green);
+    margin-bottom:10px;
+  }
+  .sec-title{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(30px,3.6vw,44px);
+    letter-spacing:-0.02em;line-height:1.1;
+  }
+  .sec-intro{
+    font-family:'Spectral',serif;font-size:19px;color:var(--ink-soft);
+    max-width:34em;margin-bottom:54px;
+  }
+
+  /* ---------- PROBLEM ---------- */
+  .problem{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .problem-body{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;
+  }
+  .problem-body .lead{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(26px,3vw,34px);line-height:1.22;letter-spacing:-0.018em;
+  }
+  .problem-body .lead .mk{color:var(--green);font-style:italic;}
+  .problem-body p{font-size:17px;color:var(--ink-soft);margin-bottom:18px;}
+  .problem-body p:last-child{margin-bottom:0;}
+
+  /* ---------- SERVICES ---------- */
+  .cards{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border:1.5px solid var(--ink);
+  }
+  .card{
+    padding:36px 30px 32px;
+    border-right:1.5px solid var(--ink);
+    display:flex;flex-direction:column;
+    transition:background .25s;
+    position:relative;
+  }
+  .card:last-child{border-right:none;}
+  .card:hover{background:var(--paper-deep);}
+  .card-mark{
+    font-family:'Fraunces',serif;font-style:italic;font-size:16px;
+    color:var(--green);margin-bottom:20px;
+  }
+  .card h3{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:24px;line-height:1.15;letter-spacing:-0.015em;
+    margin-bottom:10px;
+  }
+  .card-price{
+    font-family:'Archivo',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:0.02em;
+    color:var(--green);
+    padding-bottom:18px;margin-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .card-meta{
+    font-family:'Spectral',serif;font-style:italic;
+    font-size:14px;letter-spacing:0;
+    color:var(--ink-soft);
+    padding-bottom:18px;margin-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .card p{font-size:15px;color:var(--ink-soft);margin-bottom:24px;flex-grow:1;}
+  .card-link{
+    font-size:13px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;
+    color:var(--ink);display:inline-flex;align-items:center;gap:8px;
+    align-self:flex-start;
+    transition:gap .2s,color .2s;
+  }
+  .card-link:hover{gap:13px;color:var(--green);}
+  .featured-tag{
+    position:absolute;top:0;right:0;
+    background:var(--green);color:var(--paper);
+    font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+    padding:5px 11px;
+  }
+  .cards-foot{
+    margin-top:34px;display:flex;justify-content:center;
+  }
+
+  /* ---------- WHY ME ---------- */
+  .why{background:var(--green-deep);color:var(--paper);}
+  .why-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;
+  }
+  .why .sec-num{color:var(--green-bright);}
+  .why h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:-0.02em;
+    color:var(--paper);
+  }
+  .why h2 em{font-style:italic;color:#8fc9a6;}
+  .why-body p{
+    font-size:17px;color:rgba(244,241,234,0.82);margin-bottom:20px;
+  }
+  .why-body p:last-of-type{margin-bottom:28px;}
+  .why-body .link-arrow{
+    color:var(--paper);border-color:var(--green-bright);
+  }
+  .why-body .link-arrow:hover{color:#8fc9a6;}
+  .why-sig{
+    margin-top:30px;padding-top:24px;border-top:1px solid rgba(244,241,234,0.2);
+    display:flex;gap:30px;flex-wrap:wrap;
+  }
+  .why-sig div{}
+  .why-sig .n{
+    font-family:'Fraunces',serif;font-weight:600;font-size:32px;color:var(--paper);
+    line-height:1;
+  }
+  .why-sig .l{
+    font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:rgba(244,241,234,0.6);margin-top:6px;
+  }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1.5px solid var(--ink);
+  }
+  .step{
+    padding:32px 26px 36px;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .step:last-child{border-right:none;}
+  .step-n{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:46px;color:var(--paper);
+    -webkit-text-stroke:1.5px var(--green);
+    line-height:1;margin-bottom:18px;
+  }
+  .step h4{
+    font-family:'Archivo',sans-serif;font-weight:700;
+    font-size:16px;margin-bottom:8px;
+  }
+  .step p{font-size:14px;color:var(--ink-soft);}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{
+    background:var(--ink);color:var(--paper);text-align:center;
+    padding:104px 0;
+  }
+  .final h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(34px,4.6vw,58px);line-height:1.08;letter-spacing:-0.022em;
+    margin-bottom:20px;
+  }
+  .final h2 em{font-style:italic;color:var(--green-bright);}
+  .final p{
+    font-family:'Spectral',serif;font-size:19px;
+    color:rgba(244,241,234,0.74);max-width:32em;margin:0 auto 38px;
+  }
+  .final .btn-primary{background:var(--green-bright);border-color:var(--green-bright);}
+  .final .btn-primary:hover{background:var(--green);border-color:var(--green);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--paper-deep);
+    border-top:1.5px solid var(--ink);
+    padding:54px 0 40px;
+  }
+  .foot-grid{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:40px;flex-wrap:wrap;margin-bottom:38px;
+  }
+  .foot-brand .brand{margin-bottom:12px;}
+  .foot-brand p{font-size:14px;color:var(--ink-soft);max-width:26em;}
+  .foot-brand a{border-bottom:1px solid var(--green);}
+  .foot-contact{text-align:right;}
+  .foot-contact .ci{
+    font-family:'Spectral',serif;font-size:17px;margin-bottom:4px;
+  }
+  .foot-contact a:hover{color:var(--green);}
+  .foot-nav{
+    display:flex;gap:24px;flex-wrap:wrap;
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .foot-nav a{
+    font-size:13px;font-weight:500;letter-spacing:0.03em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .foot-nav a:hover{color:var(--green);}
+  .foot-legal{
+    margin-top:24px;font-size:12px;color:var(--ink-soft);opacity:0.7;
+  }
+
+  /* ---------- REVEAL ANIM ---------- */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1!important;transform:none!important;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:940px){
+    .hero-grid{grid-template-columns:1fr;gap:44px;}
+    .problem-body{grid-template-columns:1fr;gap:30px;}
+    .why-grid{grid-template-columns:1fr;gap:34px;}
+    .cards{grid-template-columns:1fr;}
+    .card{border-right:none;border-bottom:1.5px solid var(--ink);}
+    .card:last-child{border-bottom:none;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .step:nth-child(2){border-right:none;}
+    .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid var(--line);}
+    .hero-photo-wrap{max-width:380px;margin:0 auto;}
+    .hero-stats .stats{grid-template-columns:repeat(2,1fr);}
+    .hero-stats .stat{padding:18px 20px;}
+    .hero-stats .stat:first-child,
+    .hero-stats .stat:nth-child(3){padding-left:0;}
+    .hero-stats .stat:nth-child(2),
+    .hero-stats .stat:last-child{padding-right:0;}
+    .hero-stats .stat:nth-child(2){border-right:none;}
+    .hero-stats .stat:nth-child(1),
+    .hero-stats .stat:nth-child(2){border-bottom:1px solid rgba(244,241,234,0.18);}
+    .featured-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:700px){
+    .featured-grid{grid-template-columns:1fr;gap:22px;}
+    .featured-in{padding:56px 0;}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px;}
+    .nav-links{
+      display:none;position:absolute;top:74px;left:0;right:0;
+      flex-direction:column;background:var(--paper);
+      border-bottom:1.5px solid var(--ink);padding:20px 22px;gap:18px;align-items:flex-start;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .steps{grid-template-columns:1fr;}
+    .step{border-right:none;border-bottom:1px solid var(--line);}
+    .step:last-child{border-bottom:none;}
+    .foot-contact{text-align:left;}
+    section{padding:68px 0;}
+    .hero{padding:60px 0 56px;}
+    .hero-stats .stats{grid-template-columns:1fr;}
+    .hero-stats .stat{
+      border-right:none;
+      border-bottom:1px solid rgba(244,241,234,0.18);
+      padding:18px 0;
+    }
+    .hero-stats .stat:last-child{border-bottom:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="/" class="brand">
+        <span class="dot"></span>
+        Cam Russo
+        <small>SEO &amp; Content</small>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="current">Home</a>
+        <a href="/services">Services</a>
+        <a href="#results">Results</a>
+        <a href="/about.html">About</a>
+        <a href="/insights.html">Insights</a>
+        <a href="#contact" class="nav-cta">Request a Consultation</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Independent SEO &amp; Content Consulting</div>
+          <h1>SEO that grows organic traffic — and gets you <em>cited by AI search.</em></h1>
+          <p class="hero-sub">For businesses that want to grow organic search visibility, strengthen their technical foundation, and reduce dependence on paid advertising.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+            <a href="/services" class="link-arrow">See services &amp; pricing</a>
+          </div>
+        </div>
+        <aside class="hero-photo-wrap">
+          <div class="hero-photo">
+            <img src="assets/cam-russo.jpg" alt="Cam Russo, independent SEO and content consultant">
+          </div>
+          <div class="hero-photo-cap">Cam Russo — Chicago, IL</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO STATS STRIP -->
+  <section class="hero-stats" aria-label="Recent client results">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat">
+          <div class="num">+125<span class="pct">%</span></div>
+          <div class="lbl">Organic sessions<br>(e-commerce client)</div>
+        </div>
+        <div class="stat">
+          <div class="num">+122<span class="pct">%</span></div>
+          <div class="lbl">Marketing-attributed revenue (same client)</div>
+        </div>
+        <div class="stat">
+          <div class="num">+81<span class="pct">%</span></div>
+          <div class="lbl">Gross sales in 30 days (DTC client)</div>
+        </div>
+        <div class="stat">
+          <div class="num">+312<span class="pct">%</span></div>
+          <div class="lbl">Search clicks in 30 days (same DTC client)</div>
+        </div>
+      </div>
+      <p class="hero-stats-cap">From two recent client engagements. <a href="/results">See full case studies →</a></p>
+    </div>
+  </section>
+
+  <!-- FEATURED IN -->
+  <section class="featured-in" aria-label="Featured in publications">
+    <div class="wrap">
+      <div class="eyebrow">Also Featured In</div>
+      <div class="featured-grid">
+        <a class="featured-card" href="https://www.pageonepower.com/linkarati/expired-domains-their-seo-value" target="_blank" rel="noopener noreferrer">
+          <div class="featured-img">
+            <img src="assets/featured/page-one-power.jpg" alt="Page One Power — Linkarati article preview">
+          </div>
+          <div class="featured-meta">
+            <div class="featured-type">Guest Article</div>
+            <div class="featured-pub">Page One Power · Linkarati</div>
+            <h3 class="featured-title">Expired Domains &amp; Their SEO Value <span class="arr">↗</span></h3>
+          </div>
+        </a>
+        <a class="featured-card" href="https://www.cityfoodequipment.com/blogs/learning-center/restaurant-marketing-plan" target="_blank" rel="noopener noreferrer">
+          <div class="featured-img">
+            <img src="assets/featured/city-food-equipment.png" alt="City Food Equipment — Learning Center article preview">
+          </div>
+          <div class="featured-meta">
+            <div class="featured-type">Authored Article</div>
+            <div class="featured-pub">City Food Equipment</div>
+            <h3 class="featured-title">How to Create a Winning Restaurant Marketing Plan <span class="arr">↗</span></h3>
+          </div>
+        </a>
+        <a class="featured-card" href="https://baconpodcast.com/episode-559-so-youre-working-from-home-how-to-cope-with-confinement-with-cam-russo/" target="_blank" rel="noopener noreferrer">
+          <div class="featured-img">
+            <img src="assets/featured/bacon-podcast.jpg" alt="Bacon Podcast — Episode 559 preview">
+          </div>
+          <div class="featured-meta">
+            <div class="featured-type">Podcast Guest</div>
+            <div class="featured-pub">Bacon Podcast</div>
+            <h3 class="featured-title">Episode 559 — So You&rsquo;re Working From Home? How To Cope With Confinement <span class="arr">↗</span></h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="wrap">
+      <div class="problem-body">
+        <p class="lead">Most sites are losing traffic they <span class="mk">already earned.</span></p>
+        <div>
+          <p>Technical errors quietly block pages from ranking. Thin or unstructured content gets skipped by search engines — and now by AI answer engines too. Paid ads cover the gap, but the cost climbs every year and stops the moment you stop paying.</p>
+          <p>Organic search is the channel you own. Done right, it compounds. The work is diagnosing what's holding a site back, fixing it in priority order, and keeping it improving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="why" id="about">
+    <div class="wrap">
+      <div class="why-grid">
+        <div>
+          <div class="sec-head">
+            <span class="sec-num">ii.</span>
+          </div>
+          <h2>A consultant who <em>runs sites</em> — not just audits them.</h2>
+        </div>
+        <div class="why-body">
+          <p>Over a decade of SEO experience across freelance, agency, and in-house roles — with hands-on expertise in technical SEO, schema markup, local SEO, Google Search Console, GA4, Shopify, and WordPress.</p>
+          <p>Alongside client work, I'm the founder of Kizaz Media, an independent digital media company running a portfolio of editorial websites that depend on organic search to survive.</p>
+          <a href="#about" class="link-arrow">More about my background</a>
+          <div class="why-sig">
+            <div>
+              <div class="n">10+</div>
+              <div class="l">Years in SEO</div>
+            </div>
+            <div>
+              <div class="n">16k+</div>
+              <div class="l">Products optimized</div>
+            </div>
+            <div>
+              <div class="n">3</div>
+              <div class="l">Editorial brands run</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">iii.</span>
+        <h2 class="sec-title">How engagements work.</h2>
+      </div>
+      <p class="sec-intro">A clear path from first conversation to delivered work.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <h4>Discovery &amp; Audit</h4>
+          <p>Review the site, identify issues, and define priorities.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <h4>Scope &amp; Estimate</h4>
+          <p>A written proposal with deliverables, timeline, and a fixed price.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <h4>Milestone Delivery</h4>
+          <p>Work completed in defined phases, milestone by milestone.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">4</div>
+          <h4>Review &amp; Handoff</h4>
+          <p>Each deliverable includes one round of revisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>Find out what's <em>holding your site back.</em></h2>
+      <p>Start with a conversation. Tell me about your site and your goals, and I'll tell you where the real opportunities are.</p>
+      <a href="#contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="dot"></span>
+          Cam Russo
+          <small>SEO &amp; Content</small>
+        </div>
+        <p>An independent SEO &amp; content consulting practice. Founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
+      </div>
+      <div class="foot-contact">
+        <div class="ci"><a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a></div>
+        <div class="ci"><a href="tel:+16304568962">(630) 456-8962</a></div>
+      </div>
+    </div>
+    <div class="foot-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="#results">Results</a>
+      <a href="/about.html">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-legal">© 2026 Cam Russo. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // mark JS available — reveal styles only apply when JS can un-hide them
+  document.documentElement.classList.add('js');
+
+  // Mobile menu
+  var mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+  mt.addEventListener('click',function(){nl.classList.toggle('open');});
+  nl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nl.classList.remove('open');});
+  });
+
+  // Scroll reveal
+  var revealEls=document.querySelectorAll('section .wrap > *, .proof-inner');
+  revealEls.forEach(function(el){el.classList.add('reveal');});
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+    },{threshold:0.1});
+    revealEls.forEach(function(el){obs.observe(el);});
+  }else{
+    revealEls.forEach(function(el){el.classList.add('in');});
+  }
+  // safety net: never leave content hidden
+  setTimeout(function(){
+    revealEls.forEach(function(el){el.classList.add('in');});
+  },2600);
+</script>
+
+</body>
+</html>

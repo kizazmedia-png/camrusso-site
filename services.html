@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Cam Russo, SEO & Content Consultant</title>
+<meta name="description" content="Three ways to work together: an SEO & AI-Visibility Audit, a Core SEO Retainer, and a GEO / AIO Retainer for AI search visibility. Plus content writing and hourly support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea;
+    --paper-deep:#ece7db;
+    --ink:#1c1b18;
+    --ink-soft:#46443d;
+    --green:#1d5c39;
+    --green-deep:#123a24;
+    --green-bright:#2c7d4f;
+    --line:#cfc8b8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--green);color:var(--paper);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* ---------- NAV (shared with homepage) ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,241,234,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{
+    font-family:'Fraunces',serif;
+    font-weight:600;font-size:22px;letter-spacing:-0.01em;
+    display:flex;align-items:baseline;gap:9px;
+  }
+  .brand .dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;}
+  .brand small{
+    font-family:'Archivo',sans-serif;font-weight:500;
+    font-size:11px;letter-spacing:0.13em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    font-size:14px;font-weight:500;letter-spacing:0.01em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--green);}
+  .nav-links a.current{color:var(--ink);}
+  .nav-cta{
+    font-size:13px;font-weight:600;letter-spacing:0.04em;
+    text-transform:uppercase;
+    border:1.5px solid var(--ink);
+    padding:11px 20px;border-radius:2px;
+    color:var(--ink)!important;
+    transition:background .22s,color .22s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper)!important;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink);}
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-head{padding:84px 0 30px;}
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--green);margin-bottom:22px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:32px;height:1.5px;background:var(--green);}
+  h1.page-title{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(40px,5.4vw,64px);
+    line-height:1.04;letter-spacing:-0.022em;
+    margin-bottom:24px;max-width:18ch;
+  }
+  h1.page-title em{font-style:italic;color:var(--green);}
+  .lede{
+    font-family:'Spectral',serif;font-size:20px;line-height:1.55;
+    color:var(--ink-soft);max-width:38em;
+  }
+
+  /* ---------- INTRO ROW ---------- */
+  .intro-row{
+    text-align:center;
+    padding:24px 0 56px;
+  }
+  .intro-row p{
+    font-family:'Spectral',serif;font-style:italic;
+    font-size:16px;line-height:1.6;color:var(--ink-soft);
+    max-width:50ch;margin:0 auto;
+  }
+
+  /* ---------- PACKAGE / SECTION SCAFFOLD ---------- */
+  .case{
+    padding:56px 0 80px;
+    border-top:1.5px solid var(--ink);
+  }
+  .case-eyebrow{
+    font-family:'Archivo',sans-serif;
+    font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--green);margin-bottom:18px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .case-eyebrow .sep{
+    display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--ink-soft);opacity:0.4;
+  }
+  .case-eyebrow .num{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:15px;letter-spacing:0;text-transform:none;
+    color:var(--green-deep);
+  }
+  h2.case-title{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(32px,4.2vw,52px);
+    line-height:1.05;letter-spacing:-0.022em;
+    margin-bottom:0;max-width:22ch;
+  }
+  h2.case-title em{font-style:italic;color:var(--green);}
+
+  /* two-column package body */
+  .case-body{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;
+  }
+  .pkg-head{position:sticky;top:96px;}
+  .pkg-body p{font-size:17px;color:var(--ink-soft);margin-bottom:18px;}
+  .pkg-body p:last-of-type{margin-bottom:24px;}
+  .pkg-body strong{color:var(--ink);font-weight:600;}
+  .pkg-body h3{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:20px;letter-spacing:-0.012em;line-height:1.2;
+    color:var(--ink);
+    margin-top:28px;margin-bottom:14px;
+  }
+  .pkg-body h3:first-child{margin-top:0;}
+  .pkg-body ul{
+    margin:0 0 8px 0;padding:0;list-style:none;
+  }
+  .pkg-body li{
+    font-size:16px;color:var(--ink-soft);
+    padding:6px 0 6px 22px;position:relative;
+  }
+  .pkg-body li::before{
+    content:"";position:absolute;left:0;top:14px;
+    width:10px;height:1.5px;background:var(--green);
+  }
+  .pkg-body li strong{color:var(--ink);font-weight:600;}
+  .pkg-cta{margin-top:32px;}
+
+  /* ---------- HOURLY SECTION (quieter, single column) ---------- */
+  .hourly{
+    padding:40px 0;
+    border-top:1.5px solid var(--ink);
+  }
+  .hourly-inner{
+    max-width:640px;margin:0 auto;text-align:center;
+  }
+  .hourly h3{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(22px,2.4vw,28px);
+    line-height:1.2;letter-spacing:-0.015em;
+    margin-bottom:16px;color:var(--ink);
+  }
+  .hourly p{
+    font-family:'Spectral',serif;font-size:18px;line-height:1.55;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- BUTTON ---------- */
+  .btn-primary{
+    background:var(--green);color:var(--paper);
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.03em;
+    padding:16px 30px;border-radius:2px;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:background .22s,transform .22s,border-color .22s;
+    border:1.5px solid var(--green);
+  }
+  .btn-primary:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px);}
+  .btn-primary .arr{transition:transform .22s;}
+  .btn-primary:hover .arr{transform:translateX(4px);}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{
+    background:var(--ink);color:var(--paper);text-align:center;
+    padding:104px 0;
+    margin-top:0;
+  }
+  .final h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(34px,4.6vw,58px);line-height:1.08;letter-spacing:-0.022em;
+    margin-bottom:20px;
+  }
+  .final h2 em{font-style:italic;color:var(--green-bright);}
+  .final p{
+    font-family:'Spectral',serif;font-size:19px;
+    color:rgba(244,241,234,0.74);max-width:32em;margin:0 auto 38px;
+  }
+  .final .btn-primary{background:var(--green-bright);border-color:var(--green-bright);}
+  .final .btn-primary:hover{background:var(--green);border-color:var(--green);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--paper-deep);
+    border-top:1.5px solid var(--ink);
+    padding:54px 0 40px;
+  }
+  .foot-grid{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:40px;flex-wrap:wrap;margin-bottom:38px;
+  }
+  .foot-brand .brand{margin-bottom:12px;}
+  .foot-brand p{font-size:14px;color:var(--ink-soft);max-width:26em;}
+  .foot-brand a{border-bottom:1px solid var(--green);}
+  .foot-contact{text-align:right;}
+  .foot-contact .ci{font-family:'Spectral',serif;font-size:17px;margin-bottom:4px;}
+  .foot-contact a:hover{color:var(--green);}
+  .foot-nav{
+    display:flex;gap:24px;flex-wrap:wrap;
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .foot-nav a{
+    font-size:13px;font-weight:500;letter-spacing:0.03em;
+    color:var(--ink-soft);transition:color .2s;
+  }
+  .foot-nav a:hover{color:var(--green);}
+  .foot-legal{margin-top:24px;font-size:12px;color:var(--ink-soft);opacity:0.7;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:940px){
+    .case-body{grid-template-columns:1fr;gap:30px;}
+    .pkg-head{position:static;}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px;}
+    .nav-links{
+      display:none;position:absolute;top:74px;left:0;right:0;
+      flex-direction:column;background:var(--paper);
+      border-bottom:1.5px solid var(--ink);padding:20px 22px;gap:18px;align-items:flex-start;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .page-head{padding:48px 0 24px;}
+    .case{padding:40px 0 56px;}
+    .intro-row{padding:16px 0 36px;}
+    .final{padding:64px 0;}
+    .foot-contact{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="/" class="brand">
+        <span class="dot"></span>
+        Cam Russo
+        <small>SEO &amp; Content</small>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/services" class="current">Services</a>
+        <a href="/results">Results</a>
+        <a href="/about.html">About</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/contact" class="nav-cta">Request a Consultation</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- PAGE INTRO -->
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Services</div>
+      <h1 class="page-title">Three ways to work together, <em>plus content and hourly support.</em></h1>
+      <p class="lede">Every engagement has a defined scope and a written estimate before any work begins. Most clients start with an audit and grow into ongoing work. Hourly support is available for scoped one-off needs.</p>
+    </div>
+  </section>
+
+  <!-- INTRO ROW -->
+  <section class="intro-row" aria-label="Pricing note">
+    <div class="wrap">
+      <p>Pricing is set at scoping based on site size, complexity, and the competitive landscape. Request a consultation for a written estimate.</p>
+    </div>
+  </section>
+
+  <!-- PACKAGE 01 — AUDIT -->
+  <section class="case" id="audit">
+    <div class="wrap">
+      <div class="case-body">
+        <div class="pkg-head">
+          <div class="case-eyebrow">
+            <span class="num">Package 01</span>
+            <span class="sep"></span>
+            <span>Fixed-scope engagement</span>
+          </div>
+          <h2 class="case-title">SEO &amp; AI-Visibility Audit</h2>
+        </div>
+        <div class="pkg-body">
+          <p>A complete diagnostic of what's holding a site back in both traditional search and AI answer engines — delivered as a prioritized fix list and a live walkthrough call, not a PDF dropped over the fence. This is the best first step for any new engagement, and it's where most retainer relationships begin.</p>
+          <h3>What's included</h3>
+          <ul>
+            <li>Full technical crawl — indexation, crawlability, schema, Core Web Vitals, broken or missing resources</li>
+            <li>On-page review — titles, meta, headings, internal linking, content gaps</li>
+            <li>AI-visibility check — how the brand currently appears (or doesn't) in ChatGPT, Claude, Perplexity, and Google AI Overviews</li>
+            <li>Prioritized fix roadmap sequenced by business impact and effort</li>
+            <li>A live walkthrough call to talk through findings, ask questions, and decide what to do next</li>
+          </ul>
+          <h3>Best for</h3>
+          <p>Sites that have grown faster than their SEO foundation — usually e-commerce or service businesses with 50+ pages, real organic traffic to protect, and a sense that something is structurally off but not which lever to pull first.</p>
+          <div class="pkg-cta">
+            <a href="/contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE 02 — CORE SEO -->
+  <section class="case" id="core">
+    <div class="wrap">
+      <div class="case-body">
+        <div class="pkg-head">
+          <div class="case-eyebrow">
+            <span class="num">Package 02</span>
+            <span class="sep"></span>
+            <span>Monthly retainer</span>
+          </div>
+          <h2 class="case-title">Core SEO Retainer</h2>
+        </div>
+        <div class="pkg-body">
+          <p>Ongoing ownership of the organic search channel. SEO is not a one-time fix — rankings require continuous maintenance, fresh content, and active adaptation to algorithm changes. A monthly retainer keeps a site improving instead of slipping.</p>
+          <h3>What's included</h3>
+          <ul>
+            <li>Ongoing technical maintenance — schema, indexation, Core Web Vitals, error monitoring</li>
+            <li>On-page optimization and internal linking improvements across priority pages each month</li>
+            <li>SEO content production — new pages or articles, scoped to the tier</li>
+            <li>Monthly Search Console reporting with clear, prioritized next steps</li>
+            <li>Direct communication channel during business hours for questions and ad-hoc strategy calls</li>
+          </ul>
+          <h3>Best for</h3>
+          <p>Businesses that have already had an audit (mine or someone else's) and want a steady hand executing the work — or sites that depend on organic traffic as a primary commercial channel and need ongoing investment, not one-off projects.</p>
+          <div class="pkg-cta">
+            <a href="/contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE 03 — GEO / AIO -->
+  <section class="case" id="geo">
+    <div class="wrap">
+      <div class="case-body">
+        <div class="pkg-head">
+          <div class="case-eyebrow">
+            <span class="num">Package 03</span>
+            <span class="sep"></span>
+            <span>Specialty monthly retainer</span>
+          </div>
+          <h2 class="case-title">GEO / AIO Retainer</h2>
+        </div>
+        <div class="pkg-body">
+          <p>A dedicated program to position a business to be recognized, cited, and recommended by AI search and large language models — ChatGPT, Claude, Perplexity, and Google AI Overviews. Most SEO retainers ignore the AI answer layer entirely; this one is built around it.</p>
+          <h3>What's included</h3>
+          <ul>
+            <li>Entity and Organization schema strategy — building the structured-data foundation LLMs use to recognize a brand as a real entity</li>
+            <li>Content positioning for citation — structured, extractable, authoritative formatting that LLMs prefer to quote from</li>
+            <li>Cross-platform consistency — aligning the brand entity across the web (Wikipedia-style descriptions, Crunchbase, LinkedIn, sameAs links) so AI models trust it</li>
+            <li>Ongoing AI-visibility tracking against a defined set of target queries, with monthly reporting</li>
+            <li>Quarterly strategy reviews as the AI search landscape shifts</li>
+          </ul>
+          <h3>Best for</h3>
+          <p>Brands that already rank well in traditional Google but are invisible inside ChatGPT and Perplexity — or category-defining businesses that want to be the answer LLMs reach for when someone asks about their space.</p>
+          <div class="pkg-cta">
+            <a href="/contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT WRITING & OPTIMIZATION -->
+  <section class="case" id="content">
+    <div class="wrap">
+      <div class="case-body">
+        <div class="pkg-head">
+          <h2 class="case-title">Content writing &amp; optimization.</h2>
+        </div>
+        <div class="pkg-body">
+          <p>SEO-driven content written for real search intent — user-first, structured, and free of keyword stuffing. Available as one-off pieces or a recurring monthly content package.</p>
+          <h3>What's included</h3>
+          <ul>
+            <li>Monthly content package — typically 4 SEO articles per month, scoped to article length, topic depth, and research intensity</li>
+            <li>One-off content — service pages, location and city pages, blog and pillar content, rewrites and refreshes of underperforming existing pages</li>
+            <li>Content strategy as standalone consulting — calendars, keyword maps, topical authority planning</li>
+          </ul>
+          <h3>Best for</h3>
+          <p>Sites that have technical SEO handled but need content production at a quality and cadence that actually ranks — or businesses building a publishing operation from scratch.</p>
+          <div class="pkg-cta">
+            <a href="/contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURLY -->
+  <section class="hourly" id="hourly">
+    <div class="wrap">
+      <div class="hourly-inner">
+        <h3>Hourly support</h3>
+        <p>For consultations, second-opinion reviews, or small fixes that don't fit a package, work is available hourly. Hours are billed against a written estimate provided before any work begins. For most projects, a fixed-scope package is the better value — but hourly stays available for when it isn't.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Have a project in mind? <em>Let's talk.</em></h2>
+      <p>Every engagement starts the same way — a conversation about your site, your goals, and where the real opportunities are. No obligation, no boilerplate sales process.</p>
+      <a href="/contact" class="btn-primary">Request a Consultation <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="dot"></span>
+          Cam Russo
+          <small>SEO &amp; Content</small>
+        </div>
+        <p>An independent SEO &amp; content consulting practice. Founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
+      </div>
+      <div class="foot-contact">
+        <div class="ci"><a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a></div>
+        <div class="ci"><a href="tel:+16304568962">(630) 456-8962</a></div>
+      </div>
+    </div>
+    <div class="foot-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/results">Results</a>
+      <a href="/about.html">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="foot-legal">© 2026 Cam Russo. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+  mt.addEventListener('click',function(){nl.classList.toggle('open');});
+  nl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nl.classList.remove('open');});
+  });
+</script>
+
+</body>
+</html>
