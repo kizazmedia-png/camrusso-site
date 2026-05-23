@@ -3,7 +3,10 @@
     "allow": [
       "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://www.pageonepower.com/linkarati/expired-domains-their-seo-value\" -o /tmp/pop.html)",
       "Read(//tmp/**)",
-      "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://www.cityfoodequipment.com/blogs/learning-center/restaurant-marketing-plan\" -o /tmp/cfe.html)"
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://www.cityfoodequipment.com/blogs/learning-center/restaurant-marketing-plan\" -o /tmp/cfe.html)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
