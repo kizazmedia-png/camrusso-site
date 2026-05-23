@@ -97,7 +97,7 @@
   /* ---------- CHOICE LAYOUT ---------- */
   .body-grid{
     display:grid;grid-template-columns:1fr 1.2fr;column-gap:48px;
-    padding-bottom:48px;align-items:start;
+    padding-bottom:96px;align-items:start;
   }
   .schedule-col{padding-top:6px;padding-right:48px;border-right:1px solid var(--line);}
   .form-col{padding-top:6px;}
@@ -206,32 +206,6 @@
   .success-card p{font-size:16px;color:var(--ink-soft);}
   .success-card p a{border-bottom:1.5px solid var(--green);}
 
-  /* ---------- DIRECT CONTACT STRIP ---------- */
-  .direct-strip{
-    border-top:1px solid var(--line);
-    padding:42px 0 96px;
-    display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;
-  }
-  .direct-items{
-    display:flex;gap:54px;flex-wrap:wrap;justify-content:center;
-  }
-  .direct-item{
-    display:flex;flex-direction:column;gap:2px;align-items:center;
-  }
-  .direct-item .lbl{
-    font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  .direct-item a{
-    font-family:'Spectral',serif;font-size:19px;color:var(--ink);
-    transition:color .2s;
-  }
-  .direct-item a:hover{color:var(--green);}
-  .side-note{
-    font-size:14px;color:var(--ink-soft);line-height:1.55;max-width:38em;
-  }
-  .side-note a{border-bottom:1px solid var(--green);}
-
   /* ---------- FOOTER ---------- */
   footer{
     background:var(--paper-deep);
@@ -324,7 +298,7 @@
           <div class="choice-eyebrow">Ready to talk?</div>
           <h2 class="choice-head">Book a 30-minute call.</h2>
           <p class="choice-text">Pick a time that works for your schedule. We'll talk through your site, your goals, and where the real opportunities are. No prep needed — just show up.</p>
-          <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/russocam17/30min'}); return false;" class="btn-submit btn-schedule">Schedule a Call <span class="arr">→</span></a>
+          <a href="https://calendly.com/russocam17/30min" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/russocam17/30min'}); return false;" class="btn-submit btn-schedule">Schedule a Call <span class="arr">→</span></a>
           <p class="schedule-reassure">30 minutes. No charge. No sales script.</p>
         </div>
 
@@ -395,21 +369,6 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- DIRECT CONTACT (below the choice) -->
-      <div class="direct-strip">
-        <div class="direct-items">
-          <div class="direct-item">
-            <span class="lbl">Email</span>
-            <a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a>
-          </div>
-          <div class="direct-item">
-            <span class="lbl">Phone</span>
-            <a href="tel:+16304568962">(630) 456-8962</a>
-          </div>
-        </div>
-        <p class="side-note">Cam Russo is an independent SEO &amp; content consultant and the founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
       </div>
     </div>
   </section>
