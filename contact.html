@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <style>
   :root{
     --paper:#f4f1ea;
@@ -92,10 +94,31 @@
     color:var(--ink-soft);max-width:36em;
   }
 
-  /* ---------- FORM LAYOUT ---------- */
+  /* ---------- CHOICE LAYOUT ---------- */
   .body-grid{
-    display:grid;grid-template-columns:1.55fr 1fr;gap:64px;
-    padding-bottom:96px;align-items:start;
+    display:grid;grid-template-columns:1fr 1.2fr;column-gap:48px;
+    padding-bottom:48px;align-items:start;
+  }
+  .schedule-col{padding-top:6px;padding-right:48px;border-right:1px solid var(--line);}
+  .form-col{padding-top:6px;}
+  .choice-eyebrow{
+    font-family:'Archivo',sans-serif;
+    font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--green);margin-bottom:18px;
+  }
+  .choice-head{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:28px;line-height:1.2;letter-spacing:-0.015em;
+    color:var(--ink);margin-bottom:18px;
+  }
+  .choice-text{
+    font-family:'Spectral',serif;font-size:17px;line-height:1.55;
+    color:var(--ink-soft);max-width:28em;margin-bottom:20px;
+  }
+  .btn-schedule{text-decoration:none;}
+  .schedule-reassure{
+    margin-top:14px;font-family:'Spectral',serif;font-style:italic;
+    font-size:14px;color:var(--ink-soft);
   }
   .form-block{
     background:var(--paper-deep);
@@ -183,22 +206,18 @@
   .success-card p{font-size:16px;color:var(--ink-soft);}
   .success-card p a{border-bottom:1.5px solid var(--green);}
 
-  /* ---------- SIDEBAR ---------- */
-  .side{padding-top:6px;}
-  .side h2{
-    font-family:'Fraunces',serif;font-weight:500;
-    font-size:26px;letter-spacing:-0.015em;line-height:1.15;
-    margin-bottom:20px;
-  }
-  .side .direct{
+  /* ---------- DIRECT CONTACT STRIP ---------- */
+  .direct-strip{
     border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:22px 0;margin-bottom:26px;
+    padding:42px 0 96px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;
+  }
+  .direct-items{
+    display:flex;gap:54px;flex-wrap:wrap;justify-content:center;
   }
   .direct-item{
-    display:flex;flex-direction:column;gap:2px;margin-bottom:14px;
+    display:flex;flex-direction:column;gap:2px;align-items:center;
   }
-  .direct-item:last-child{margin-bottom:0;}
   .direct-item .lbl{
     font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
     color:var(--ink-soft);
@@ -209,7 +228,7 @@
   }
   .direct-item a:hover{color:var(--green);}
   .side-note{
-    font-size:14px;color:var(--ink-soft);line-height:1.55;
+    font-size:14px;color:var(--ink-soft);line-height:1.55;max-width:38em;
   }
   .side-note a{border-bottom:1px solid var(--green);}
 
@@ -242,7 +261,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:940px){
-    .body-grid{grid-template-columns:1fr;gap:38px;}
+    .body-grid{grid-template-columns:1fr;column-gap:0;row-gap:48px;}
+    .schedule-col{
+      padding-right:0;border-right:0;
+      padding-bottom:42px;border-bottom:1px solid var(--line);
+    }
     .form-block{padding:32px 28px 30px;}
   }
   @media(max-width:680px){
@@ -296,8 +319,19 @@
     <div class="wrap">
       <div class="body-grid">
 
-        <!-- FORM -->
-        <div>
+        <!-- LEFT: SCHEDULE -->
+        <div class="schedule-col">
+          <div class="choice-eyebrow">Ready to talk?</div>
+          <h2 class="choice-head">Book a 30-minute call.</h2>
+          <p class="choice-text">Pick a time that works for your schedule. We'll talk through your site, your goals, and where the real opportunities are. No prep needed — just show up.</p>
+          <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/russocam17/30min'}); return false;" class="btn-submit btn-schedule">Schedule a Call <span class="arr">→</span></a>
+          <p class="schedule-reassure">30 minutes. No charge. No sales script.</p>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="form-col">
+          <div class="choice-eyebrow">Want to share details first?</div>
+          <h2 class="choice-head">Send a message.</h2>
           <div id="errorMsg" class="msg error" style="display:none;" role="status"></div>
 
           <form id="contactForm" class="form-block" novalidate>
@@ -361,22 +395,21 @@
           </div>
         </div>
 
-        <!-- SIDEBAR -->
-        <aside class="side">
-          <h2>Prefer to reach out directly?</h2>
-          <div class="direct">
-            <div class="direct-item">
-              <span class="lbl">Email</span>
-              <a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a>
-            </div>
-            <div class="direct-item">
-              <span class="lbl">Phone</span>
-              <a href="tel:+16304568962">(630) 456-8962</a>
-            </div>
-          </div>
-          <p class="side-note">Cam Russo is an independent SEO &amp; content consultant and the founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
-        </aside>
+      </div>
 
+      <!-- DIRECT CONTACT (below the choice) -->
+      <div class="direct-strip">
+        <div class="direct-items">
+          <div class="direct-item">
+            <span class="lbl">Email</span>
+            <a href="mailto:russocam17@gmail.com">russocam17@gmail.com</a>
+          </div>
+          <div class="direct-item">
+            <span class="lbl">Phone</span>
+            <a href="tel:+16304568962">(630) 456-8962</a>
+          </div>
+        </div>
+        <p class="side-note">Cam Russo is an independent SEO &amp; content consultant and the founder of <a href="https://kizaz.com">Kizaz Media</a>. Based in the Chicago area, working with clients nationwide.</p>
       </div>
     </div>
   </section>
